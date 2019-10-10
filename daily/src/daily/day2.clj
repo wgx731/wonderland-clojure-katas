@@ -13,7 +13,7 @@
 (defn q5
   "http://www.4clojure.com/problem/5"
   [ans]
-  (and (= ans (conj '(2 3 4) 1)) (= ans (conj '(3 4) 2 1))))
+  (= ans (conj '(2 3 4) 1) (conj '(3 4) 2 1)))
 
 (defn q6
   "http://www.4clojure.com/problem/6"
@@ -23,4 +23,4 @@
 (defn q7
   "http://www.4clojure.com/problem/7"
   [ans]
-  (and (= ans (conj [1 2 3] 4)) (= ans (conj [1 2] 3 4))))
+  (= ans (conj [1 2 3] 4) (conj [1 2] 3 4)))
