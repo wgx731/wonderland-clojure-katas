@@ -36,7 +36,3 @@
   [ans]
   (and (= (ans [1 2 3 4 5]) 5) (= (ans '(5 4 3)) 3) (= (ans ["b" "c" "d"]) "d")))
 
-(defn q20
-  "http://www.4clojure.com/problem/20"
-  [ans]
-  (and (= (ans (list 1 2 3 4 5)) 4) (= (ans ["a" "b" "c"]) "b") (= (ans [[1 2] [3 4]]) [1 2])))

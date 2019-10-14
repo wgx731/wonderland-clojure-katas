@@ -30,6 +30,3 @@
   (testing "q19 should pass"
     (is (= (q19 #(if (next %) (recur (next %)) (first %))) true))))
 
-(deftest q20-test
-  (testing "q20 should pass"
-    (is (= (q20 #(if (nil? (next (next %))) (first %) (recur (next %)))) true))))
