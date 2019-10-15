@@ -9,17 +9,28 @@
 (defn q14
   "http://www.4clojure.com/problem/14"
   [ans]
-  (= ans ((fn add-five [x] (+ x 5)) 3) ((fn [x] (+ x 5)) 3) (#(+ % 5) 3) ((partial + 5) 3)))
+  (= ans
+     ((fn add-five [x] (+ x 5)) 3)
+     ((fn [x] (+ x 5)) 3)
+     (#(+ % 5) 3)
+     ((partial + 5) 3)))
 
 (defn q15
   "http://www.4clojure.com/problem/15"
   [ans]
-  (and (= (ans 2) 4) (= (ans 3) 6) (= (ans 11) 22) (= (ans 7) 14)))
+  (and
+    (= (ans 2) 4)
+    (= (ans 3) 6)
+    (= (ans 11) 22)
+    (= (ans 7) 14)))
 
 (defn q16
   "http://www.4clojure.com/problem/16"
   [ans]
-  (and (= (ans "Dave") "Hello, Dave!") (= (ans "Jehn") "Hello, Jehn!") (= (ans "Rhea") "Hello, Rhea!")))
+  (and
+    (= (ans "Dave") "Hello, Dave!")
+    (= (ans "Jehn") "Hello, Jehn!")
+    (= (ans "Rhea") "Hello, Rhea!")))
 
 (defn q17
   "http://www.4clojure.com/problem/17"
@@ -34,5 +45,8 @@
 (defn q19
   "http://www.4clojure.com/problem/19"
   [ans]
-  (and (= (ans [1 2 3 4 5]) 5) (= (ans '(5 4 3)) 3) (= (ans ["b" "c" "d"]) "d")))
+  (and
+    (= (ans [1 2 3 4 5]) 5)
+    (= (ans '(5 4 3)) 3)
+    (= (ans ["b" "c" "d"]) "d")))
 

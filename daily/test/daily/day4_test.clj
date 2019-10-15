@@ -28,5 +28,7 @@
 
 (deftest q19-test
   (testing "q19 should pass"
-    (is (= (q19 #(if (next %) (recur (next %)) (first %))) true))))
+    (is (= (q19 #(if (next %)
+                   (recur (next %))
+                   (first %))) true))))
 
