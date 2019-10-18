@@ -3,5 +3,5 @@
   :url "https://github.com/wgx731/wonderland-clojure-katas"
   :license {:name "MIT"
             :url "https://github.com/wgx731/wonderland-clojure-katas/blob/dev/LICENSE"}
-  :dependencies [[org.clojure/clojure "1.10.0"]]
+  :dependencies [[org.clojure/clojure "1.10.1"]]
   :repl-options {:init-ns daily.core})
