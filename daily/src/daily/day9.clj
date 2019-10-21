@@ -1,7 +1,7 @@
 (ns daily.day9)
 
 (defn q26
-  "http://www.4clojure.com/problem/45"
+  "http://www.4clojure.com/problem/26"
   [ans]
   (= (ans 3) '(1 1 2))
   (= (ans 6) '(1 1 2 3 5 8))
