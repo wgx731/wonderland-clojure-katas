@@ -1,6 +1,5 @@
 (ns daily.day9-test
   (:require [clojure.test :refer :all]
-            [clojure.string :refer :all]
             [daily.day9 :refer :all]))
 
 (deftest q26-test
@@ -10,4 +9,4 @@
 
 (deftest q29-test
   (testing "q29 should pass"
-    (is (= (q29 #(join "" (filter (fn [c] (Character/isUpperCase c)) %))) true))))
+    (is (= (q29 #(clojure.string/join "" (filter (fn [c] (Character/isUpperCase c)) %))) true))))

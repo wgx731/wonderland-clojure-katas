@@ -8,12 +8,13 @@
 (defn q83
   "http://www.4clojure.com/problem/83"
   [ans]
-  (= false (ans false false))
-  (= true (ans true false))
-  (= false (ans true))
-  (= true (ans false true false))
-  (= false (ans true true true))
-  (= true (ans true true true false)))
+  (and
+    (= false (ans false false))
+    (= true (ans true false))
+    (= false (ans true))
+    (= true (ans false true false))
+    (= false (ans true true true))
+    (= true (ans true true true false))))
 
 (defn q66
   "http://www.4clojure.com/problem/66"
