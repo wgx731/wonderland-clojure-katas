@@ -2,11 +2,32 @@
   (:require [clojure.test :refer :all]
             [daily.queen-of-hearts :refer :all]))
 
+(deftest paint-it-yellow-test
+  (testing "it should paint the flower into yellow color"
+    (is (= "yellow carnation" (paint-it-yellow "white carnation")) true)
+    (is (=
+          (list "yellow carnation"
+                "yellow daffodil"
+                "yellow rose"
+                "yellow rose"
+                "yellow rose"
+                "yellow lily"
+                "yellow carnation")
+          (map paint-it-yellow flowers))
+        true)
+    ))
+
 (deftest paint-it-red-test
   (testing "it should paint the flower into red color"
     (is (= "red carnation" (paint-it-red "white carnation")) true)
     (is (=
-          (list "red carnation" "red daffodil" "red rose" "red rose" "red rose" "red lily" "red carnation")
+          (list "red carnation"
+                "red daffodil"
+                "red rose"
+                "red rose"
+                "red rose"
+                "red lily"
+                "red carnation")
           (map paint-it-red flowers))
         true)
     ))
@@ -19,6 +40,7 @@
           (list "yellow rose" "red rose" "white rose")
           (filter is-a-rose? flowers)) true)
     ))
+
 (deftest fix-for-the-queen-xform-test
   (testing "only red rose should return"
     (let [ans ["red rose", "red rose", "red rose"]

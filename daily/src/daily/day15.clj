@@ -22,7 +22,6 @@
 (defn q43
   "http://www.4clojure.com/problem/43"
   [ans]
-  (println (ans [1 2 3 4 5 6] 2))
   (and
     (= (ans [1 2 3 4 5 6] 2) '((1 3 5) (2 4 6)))
     (= (ans (range 9) 3) '((0 3 6) (1 4 7) (2 5 8)))

@@ -8,6 +8,10 @@
               "purple lily"
               "pink carnation"])
 
+(defn paint-it-yellow [s]
+  (str "yellow "
+       (last (clojure.string/split s #"\s"))))
+
 (defn paint-it-red [s]
   (str "red "
        (last (clojure.string/split s #"\s"))))
