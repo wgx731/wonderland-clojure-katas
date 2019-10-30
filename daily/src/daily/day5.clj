@@ -38,14 +38,10 @@
 (defn q145
   "http://www.4clojure.com/problem/145"
   [ans]
-  (and
     (= ans (for [x (range 40)
-                :when (= 1 (rem x 4))]
-            x))
-    (= ans (for [x (iterate #(+ 4 %) 0)
-                :let [z (inc x)]
-                :while (< z 40)]
-            z))
-    (= ans (for [[x y] (partition 2 (range 20))]
-            (+ x y)))
-    ))
+                :when (= 1 (rem x 4))] x)
+       (for [x (iterate #(+ 4 %) 0)
+             :let [z (inc x)]
+             :while (< z 40)] z)
+       (for [[x y] (partition 2 (range 20))]
+         (+ x y))))

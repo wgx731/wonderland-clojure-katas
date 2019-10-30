@@ -8,4 +8,4 @@
 
 (deftest q33-test
   (testing "q33 should pass"
-    (is (= (q33 (fn [coll n] (mapcat (fn [item] (take n (iterate identity item))) coll))) true))))
+    (is (= (q33 #(mapcat (fn [item] (take %2 (iterate identity item))) %1)) true))))

@@ -31,4 +31,3 @@
     (is (= (q19 #(if (next %)
                    (recur (next %))
                    (first %))) true))))
-
