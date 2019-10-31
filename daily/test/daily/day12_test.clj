@@ -5,9 +5,10 @@
 
 (deftest q107-test
   (testing "q107 should pass"
-    (is (= (q107 (fn [n]
-                   (partial (fn [n x]
-                              (reduce * (take n (repeat x)))) n))) true))))
+    (is (= (q107 (fn [n] (partial (fn [n x] (->> x
+                                           (repeat)
+                                           (take n)
+                                           (reduce *))) n))) true))))
 
 (deftest q90-test
   (testing "q90 should pass"

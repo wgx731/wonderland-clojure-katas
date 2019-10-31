@@ -19,7 +19,8 @@
 (defn q66
   "http://www.4clojure.com/problem/66"
   [ans]
+  (and
   (= (ans 2 4) 2)
   (= (ans 10 5) 5)
   (= (ans 5 7) 1)
-  (= (ans 1023 858) 33))
+  (= (ans 1023 858) 33)))

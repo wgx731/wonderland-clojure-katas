@@ -8,7 +8,7 @@
 
 (deftest q42-test
   (testing "q42 should pass"
-    (is (= (q42 (fn fac [n] (cond (= n 1) 1 :else (* n (fac (- n 1)))))) true))))
+    (is (= (q42 #(reduce * (range 1 (inc %)))) true))))
 
 (deftest q52-test
   (testing "q52 should pass"

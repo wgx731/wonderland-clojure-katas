@@ -10,8 +10,8 @@
   (testing "q44 should pass"
     (is (= (q44 (fn [n xs] (cond
                              (= n 0) xs
-                             (> n 0) (recur (- n 1) (conj (vec (rest xs)) (first xs)))
-                             (< n 0) (recur (+ n 1) (conj (drop-last xs) (last xs)))))) true))))
+                             (> n 0) (recur (dec n) (conj (vec (rest xs)) (first xs)))
+                             (< n 0) (recur (inc n) (conj (drop-last xs) (last xs)))))) true))))
 
 (deftest q43-test
   (testing "q43 should pass"

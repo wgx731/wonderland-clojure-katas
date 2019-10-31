@@ -12,7 +12,7 @@
 
 (deftest q96-test
   (testing "q96 should pass"
-    (is (= (q96 (fn symmetry [[root left right]]
+    (is (= (q96 (fn symmetry [[_ left right]]
                   (let [mirror? (fn mirror? [a b]
                                   (cond
                                     (not= (sequential? a) (sequential? b)) false

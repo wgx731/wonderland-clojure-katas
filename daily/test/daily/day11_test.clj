@@ -8,12 +8,13 @@
 
 (deftest q83-test
   (testing "q83 should pass"
-    (is (= (q83 (fn [& xs]
-                  (true? (and (some true? xs) (some false? xs))))) true))))
+    (is (= (q83 (fn [& xs] (->> (and (some true? xs) (some false? xs))
+                                (true?)))) true))))
 
 (deftest q66-test
   (testing "q66 should pass"
-    (is (= (q66 (fn [x y]
-                  (apply max
-                         (filter #(= 0 (mod x %) (mod y %))
-                                 (range 1 (+ 1 (max (/ x 2) (/ y 2)))))))) true))))
+    (is (= (q66 (fn [a r]
+                  (cond
+                    (< a r) (recur r a)
+                    (not= 0 (mod a r)) (recur r (mod a r))
+                    :else r))) true))))
