@@ -6,34 +6,27 @@
                (slurp)
                (read-string)))
 
-(defn- char-diff-count [w1 w2]
-  (get (frequencies (map = w1 w2)) false 0))
+(defn- number-of-different-chars [word1 word2]
+  (count (filter false? (map = word1 word2))))
 
-(defn- next-words [word]
-  (->> (set words)
-       (filter #(= 1 (char-diff-count word %)))))
+(defn- potential-next-word? [word next-word already-used-words]
+  (and (not (contains? already-used-words next-word))
+       (= (count word) (count next-word))
+       (= 1 (number-of-different-chars word next-word))))
 
-;; TODO: write main doublets function
+(defn- next-words-to-check [word goal already-used-words]
+  (->> words
+       (filter #(potential-next-word? word % already-used-words))
+       (sort-by #(number-of-different-chars goal %))))
 
-(defn- hamming-distance [x y]
-  (and
-    (= (count x) (count y))
-    (->> [x y]
-         (apply map not=)
-         (filter identity)
-         count)))
-
-(defn- next-steps [dict x]
-  (map
-    #(conj x %)
-    (filter
-      #(= 1 (hamming-distance (last x) %))
-      dict)))
+(defn- reach-goal-from-word [word goal already-used-words]
+  (if (= word goal)
+    (list goal)
+    (if-let [next-words
+             (some #(reach-goal-from-word % goal (conj already-used-words %))
+                   (next-words-to-check word goal already-used-words))]
+      (conj next-words word))))
 
 (defn doublets [word1 word2]
-  (loop [path [[word1]] n (count words)]
-    (let [matching-path (filter #(some #{word2} %) path)]
-      (or
-        (first matching-path)
-        (if (< n 0) [])
-        (recur (apply concat (map #(next-steps words %) path)) (dec n))))))
+  (or (reach-goal-from-word word1 word2 (set [word1]))
+      (list)))
