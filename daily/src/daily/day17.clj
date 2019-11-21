@@ -36,7 +36,6 @@
 (defn q40
   "http://www.4clojure.com/problem/40"
   [ans]
-  (println (ans 0 [1 2 3]))
   (and
     (= (ans 0 [1 2 3]) [1 0 2 0 3])
     (= (apply str (ans ", " ["one" "two" "three"])) "one, two, three")
