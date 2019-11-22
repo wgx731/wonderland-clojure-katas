@@ -8,23 +8,12 @@
 
 (deftest q54-test
   (testing "q54 should pass"
-    (is (= (q54 (fn q54-ans
-                  ([n coll]
-                   (q54-ans n n coll))
-                  ([n step coll]
-                   (lazy-seq
-                     (when-let [s (seq coll)]
-                       (let [p (doall (take n s))]
-                         (when (= n (count p))
-                           (cons p (q54-ans n step (nthrest s step))))))))
-                  ([n step pad coll]
-                   (lazy-seq
-                     (when-let [s (seq coll)]
-                       (let [p (doall (take n s))]
-                         (if (= n (count p))
-                           (cons p (q54-ans n step pad (nthrest s step)))
-                           (list (take n (concat p pad)))))))))))
-           true)))
+    (is (= (q54 (fn partition-seq [n coll]
+                  (loop [c coll partitioned []]
+                    (if (< (count c) n)
+                      partitioned
+                      (recur (drop n c) (conj partitioned (take n c)))))))
+           true))))
 
 (deftest q55-test
   (testing "q55 should pass"

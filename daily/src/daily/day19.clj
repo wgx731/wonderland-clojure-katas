@@ -12,7 +12,6 @@
   "http://www.4clojure.com/problem/54"
   [ans]
   (and
-    (println (ans 3 (range 9)))
     (= (ans 3 (range 9)) '((0 1 2) (3 4 5) (6 7 8)))
     (= (ans 2 (range 8)) '((0 1) (2 3) (4 5) (6 7)))
     (= (ans 3 (range 8)) '((0 1 2) (3 4 5)))))
